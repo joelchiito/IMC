@@ -27,7 +27,7 @@
         />
 
     <EditText
-        android:="@+id/campo_estatura"
+        android:id="@+id/campo_estatura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />

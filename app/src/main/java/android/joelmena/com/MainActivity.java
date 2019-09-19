@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String KEY_CONTEO = "android.joelmena.com.mainactivity.conteo";
-    private int conteo;
+    private static final String KEY_CONTEO = "android.joelmena.com.mainactivity.Imc";
+    private int conteo = 0;
     private EditText mCampoPeso;
     private EditText mCampoEstatura;
     private Button mBotonCalcular;
