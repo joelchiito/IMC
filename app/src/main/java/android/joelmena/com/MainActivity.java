@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String KEY_CONTEO = "android.joelmena.com.mainactivity.conteo";
+    private int conteo;
     private EditText mCampoPeso;
     private EditText mCampoEstatura;
     private Button mBotonCalcular;
@@ -16,15 +18,30 @@ public class MainActivity extends AppCompatActivity {
     private TextView mEtiquetaImc;
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_CONTEO, conteo);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mCampoPeso = findViewById(R.id.campo_peso);
-        mCampoEstatura = findViewById(R.id.campo_estatura);
-        mBotonCalcular = findViewById(R.id.boton_calcular);
-        mBotonLimpiar = findViewById(R.id.boton_limpiar);
-        mEtiquetaImc = findViewById(R.id.etiqueta_imc);
+        //programacion que guarda los datos al cambiar de orientacion
+        if(savedInstanceState == null) {
+            conteo = 0;
+        }
+        else{
+            conteo = savedInstanceState.getInt(KEY_CONTEO);
+        }
+
+
+        mCampoPeso = (EditText) findViewById(R.id.campo_peso);
+        mCampoEstatura = (EditText) findViewById(R.id.campo_estatura);
+        mBotonCalcular = (Button) findViewById(R.id.boton_calcular);
+        mBotonLimpiar = (Button) findViewById(R.id.boton_limpiar);
+        mEtiquetaImc = (TextView) findViewById(R.id.etiqueta_imc);
 
     mBotonCalcular.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -47,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
             mEtiquetaImc.setText("0.0");
         }
     });
+
+
     }
 }
 
