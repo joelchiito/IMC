@@ -66,4 +66,17 @@
         android:id="@+id/etiqueta_imc"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_etiqueta_clasificacion"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:id="@+id/etiqueta_clas"
+        />
+
 </LinearLayout>
